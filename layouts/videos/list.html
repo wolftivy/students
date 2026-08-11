@@ -1,0 +1,6 @@
+{{ define "main" }}
+<main class="page-container">
+    <h1 class="page-title">All Videos</h1>
+    {{ partial "video-grid.html" .RegularPages.ByDate.Reverse }}
+</main>
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+    <!-- HERO / BRAND -->
+    <section class="hero">
+        <img src="/owl-emblem.png" alt="The Students" class="hero-emblem">
+        <h1 class="hero-title">The Students</h1>
+        <div class="hero-line"></div>
+        <p class="hero-subtitle">{{ .Site.Params.motto }}</p>
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="video-section">
+        {{ partial "video-grid.html" ((where .Site.RegularPages "Section" "videos").ByDate.Reverse) }}
+    </section>
+
+{{ end }}

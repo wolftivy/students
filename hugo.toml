@@ -1,0 +1,7 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'The Students'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  motto = "φύσις κρύπτεσθαι φιλεῖ"
