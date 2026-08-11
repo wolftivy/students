@@ -13,9 +13,11 @@
             allowfullscreen></iframe>
     </div>
 
+    {{ with .Params.description }}
     <div class="body-text">
-        {{ .Content }}
+        <p>{{ . }}</p>
     </div>
+    {{ end }}
 
 </main>
 {{ end }}
