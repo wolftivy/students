@@ -19,9 +19,13 @@
     --grid-gap: 2rem;
 }
 
+html {
+    background: #0A0A0F;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--off-white);
+    background: #0A0A0F;
     color: var(--dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -29,17 +33,11 @@ body {
 
 /* ── NAV ── */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
     display: flex;
     align-items: center;
     padding: 1.25rem 3rem;
-    background: rgba(250, 250, 248, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background: #0A0A0F;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav-logo {
@@ -47,12 +45,14 @@ nav {
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
-    color: var(--dark);
+    color: rgba(255,255,255,0.92);
 }
 
 .nav-logo img {
     height: 36px;
     width: 36px;
+    filter: invert(1);
+    opacity: 0.85;
 }
 
 .nav-logo-text {
@@ -61,7 +61,12 @@ nav {
     font-size: 1.2rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #1A0F2E;
+    color: rgba(255,255,255,0.92);
+}
+
+/* ── CONTENT ZONE ── */
+.content-zone {
+    background: var(--off-white);
 }
 
 /* ── FOOTER ── */
@@ -96,7 +101,7 @@ footer .footer-logo {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8rem 2rem 3rem;
+    padding: 3rem 2rem;
     background: #0A0A0F;
 }
 
@@ -144,7 +149,7 @@ footer .footer-logo {
 .grid-page {
     max-width: var(--grid-width);
     margin: 0 auto;
-    padding: 7rem 2rem 4rem;
+    padding: 3rem 2rem 4rem;
 }
 
 .video-grid {
@@ -243,7 +248,7 @@ footer .footer-logo {
 .page-container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 7rem 2rem 4rem;
+    padding: 3rem 2rem 4rem;
 }
 
 .page-title {
@@ -292,5 +297,5 @@ footer .footer-logo {
     .hero-title { font-size: 2.8rem; }
     nav { padding: 1rem 1.5rem; }
     .page-title { font-size: 2.2rem; }
-    .page-container { padding: 6rem 1.5rem 3rem; }
+    .page-container { padding: 2.5rem 1.5rem 3rem; }
 }

@@ -1,6 +1,8 @@
 {{ define "main" }}
-<main class="grid-page">
-    <h1 class="page-title">All Videos</h1>
-    {{ partial "video-grid.html" .RegularPages.ByDate.Reverse }}
-</main>
+<div class="content-zone">
+    <main class="grid-page">
+        <h1 class="page-title">All Videos</h1>
+        {{ partial "video-grid.html" .RegularPages.ByDate.Reverse }}
+    </main>
+</div>
 {{ end }}

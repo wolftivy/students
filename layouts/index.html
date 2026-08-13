@@ -9,8 +9,10 @@
     </section>
 
     <!-- VIDEOS -->
-    <section class="video-section">
-        {{ partial "video-grid.html" ((where .Site.RegularPages "Section" "videos").ByDate.Reverse) }}
-    </section>
+    <div class="content-zone">
+        <section class="video-section">
+            {{ partial "video-grid.html" ((where .Site.RegularPages "Section" "videos").ByDate.Reverse) }}
+        </section>
+    </div>
 
 {{ end }}
