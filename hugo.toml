@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://wolftivy.github.io/students/'
 languageCode = 'en-us'
 title = 'The Students'
 disableKinds = ['taxonomy', 'term']

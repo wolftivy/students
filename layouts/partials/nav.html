@@ -1,7 +1,7 @@
 <nav>
-    <a href="/" class="nav-logo">
+    <a href="{{ .Site.Home.RelPermalink }}" class="nav-logo">
         <span class="nav-emblem-badge">
-            <img src="/owl-emblem.png" alt="The Students emblem" onerror="this.parentElement.style.display='none'">
+            <img src="{{ "owl-emblem.png" | relURL }}" alt="The Students emblem" onerror="this.parentElement.style.display='none'">
         </span>
         <span class="nav-logo-text">The Students</span>
     </a>
