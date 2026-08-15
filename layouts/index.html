@@ -10,10 +10,11 @@
         <p class="hero-subtitle">{{ .Site.Params.motto }}</p>
     </section>
 
-    <!-- VIDEOS -->
+    <!-- RECENT CONTENT -->
     <div class="content-zone">
-        <section class="video-section">
-            {{ partial "video-grid.html" ((where .Site.RegularPages "Section" "videos").ByDate.Reverse) }}
+        <section class="feed-section">
+            {{ $items := where .Site.RegularPages "Type" "in" (slice "videos" "posts") }}
+            {{ partial "content-grid.html" $items.ByDate.Reverse }}
         </section>
     </div>
 

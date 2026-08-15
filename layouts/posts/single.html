@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="content-zone">
+    <main class="page-container">
+
+        <h1 class="page-title">{{ .Title }}</h1>
+        <div class="page-meta">{{ .Date.Format "January 2, 2006" }}</div>
+
+        <div class="body-text">
+            {{ .Content }}
+        </div>
+
+    </main>
+</div>
+{{ end }}

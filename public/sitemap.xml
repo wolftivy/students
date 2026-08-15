@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/videos/academic-apathy/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <loc>https://example.org/posts/</loc>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/videos/oliver-habryka-good-discourse-needs-leadership/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/videos/academic-apathy-jonathan-wallis/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/economic-engines-of-civilizations-the-students-lecture-with-ben-landau-taylor/</loc>
     <lastmod>2026-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/what-odysseus-teaches-us/</loc>
+    <loc>https://example.org/videos/what-odysseus-teaches-us-stephen-pimentel/</loc>
     <lastmod>2026-07-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/my-gene-selected-daughter/</loc>
@@ -23,13 +29,13 @@
     <loc>https://example.org/videos/the-computer-age-is-not-another-industrial-revolution/</loc>
     <lastmod>2026-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/posthuman-intelligence-will-care-about-glory/</loc>
+    <loc>https://example.org/videos/posthuman-intelligence-will-care-about-glory-max-dmitrienko/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/why-we-need-economic-depressions/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/the-youth-revolution-isn-t-for-us/</loc>
+    <loc>https://example.org/videos/samo-burja-the-youth-revolution-isn-t-for-us/</loc>
     <lastmod>2026-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/how-to-join-the-san-francisco-intellectual-scene/</loc>
@@ -41,7 +47,7 @@
     <loc>https://example.org/videos/ideology-is-conspicuous-consumption/</loc>
     <lastmod>2026-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/your-life-is-a-hypothesis/</loc>
+    <loc>https://example.org/videos/your-life-is-a-hypothesis-jonathan-wallis/</loc>
     <lastmod>2026-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/machiavelli-s-virtue/</loc>
@@ -50,10 +56,10 @@
     <loc>https://example.org/videos/the-machine-gun-killed-democracy/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/the-war-that-destroyed-the-greek-world/</loc>
+    <loc>https://example.org/videos/the-war-that-destroyed-the-greek-world-max-dmitrienko/</loc>
     <lastmod>2026-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/videos/why-study-greek-philosophy/</loc>
+    <loc>https://example.org/videos/why-study-greek-philosophy-stephen-pimentel/</loc>
     <lastmod>2026-04-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/videos/how-civilizations-die/</loc>

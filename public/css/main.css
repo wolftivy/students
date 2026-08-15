@@ -160,8 +160,8 @@ footer .footer-logo {
     color: rgba(255,255,255,0.88);
 }
 
-/* ── VIDEO GRID ── */
-.video-section {
+/* ── CONTENT GRID ── */
+.feed-section {
     max-width: var(--grid-width);
     margin: 0 auto;
     padding: 5rem 2rem;
@@ -173,25 +173,34 @@ footer .footer-logo {
     padding: 3rem 2rem 4rem;
 }
 
-.video-grid {
+.content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min-card), 100%), var(--grid-min-card)));
     justify-content: center;
     gap: var(--grid-gap);
 }
 
-.video-card {
+.content-card {
     text-decoration: none;
     color: var(--dark);
     display: block;
 }
 
-.video-card:hover .video-thumb {
+.content-card:hover .video-thumb {
     border-color: var(--red);
 }
 
-.video-card:hover .video-title {
+.content-card:hover .card-title {
     color: var(--red);
+}
+
+.card-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
 }
 
 .video-thumb {
@@ -226,7 +235,7 @@ footer .footer-logo {
     transition: background 0.2s;
 }
 
-.video-card:hover .play-icon {
+.content-card:hover .play-icon {
     background: rgba(155,27,48,0.8);
 }
 
@@ -241,7 +250,7 @@ footer .footer-logo {
     border-color: transparent transparent transparent #fff;
 }
 
-.video-title {
+.card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem;
     font-weight: 600;
@@ -250,9 +259,33 @@ footer .footer-logo {
     transition: color 0.2s;
 }
 
-.video-meta {
+.card-meta {
     font-size: 0.75rem;
     color: var(--grey);
+}
+
+.post-card-box {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 3px;
+    padding: 1.5rem;
+    min-height: 140px;
+    transition: border-color 0.2s;
+}
+
+.content-card:hover .post-card-box {
+    border-color: var(--red);
+}
+
+.card-excerpt {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--grey);
+    margin-top: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .empty-state {
@@ -305,12 +338,74 @@ footer .footer-logo {
     border: 0;
 }
 
-.body-text p {
+.description-text p {
     font-size: 1.05rem;
     line-height: 1.9;
     color: #2a2a2a;
     margin-bottom: 1.5rem;
     white-space: pre-line;
+}
+
+.transcript {
+    border-top: 1px solid var(--light-grey);
+    padding-top: 2rem;
+    margin-top: 1rem;
+}
+
+.transcript-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1A0F2E;
+    margin-bottom: 1rem;
+}
+
+.body-text p,
+.body-text ul,
+.body-text ol,
+.body-text blockquote {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #2a2a2a;
+    margin-bottom: 1.5rem;
+}
+
+.body-text h2,
+.body-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #1A0F2E;
+    line-height: 1.3;
+    margin: 2rem 0 1rem;
+}
+
+.body-text h2 { font-size: 1.7rem; }
+.body-text h3 { font-size: 1.35rem; }
+
+.body-text ul,
+.body-text ol {
+    padding-left: 1.5rem;
+}
+
+.body-text li {
+    margin-bottom: 0.5rem;
+}
+
+.body-text blockquote {
+    border-left: 2px solid var(--red);
+    padding-left: 1.25rem;
+    font-style: italic;
+    color: var(--grey);
+}
+
+.body-text a {
+    color: var(--red);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.body-text a:hover {
+    text-decoration: underline;
 }
 
 /* ── RESPONSIVE ── */

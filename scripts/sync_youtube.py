@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Sync content/videos/*.md from the channel's YouTube "Videos" tab.
 
-YouTube is the source of truth: this script regenerates every file it
-manages (any content/videos/*.md with JSON front matter containing a
-youtube_id) from the current channel listing, and removes ones for videos
-that are no longer there. Files that aren't JSON front matter (e.g. hand
-authored ones) are left alone.
+YouTube is the source of truth for front matter (title, date, description):
+this script regenerates every file it manages (any content/videos/*.md with
+JSON front matter containing a youtube_id) from the current channel listing,
+and removes ones for videos that are no longer there. Files that aren't JSON
+front matter (e.g. hand authored ones) are left alone.
+
+The page body is treated differently: it's a manually-added transcript, not
+something YouTube provides, so it's preserved across re-syncs. It's tracked
+by youtube_id rather than filename, so it survives even if the video's title
+(and therefore its generated slug) changes.
 
 Usage:
     python3 scripts/sync_youtube.py [channel_url]
@@ -50,18 +55,25 @@ def fetch_videos(channel_url):
     return videos
 
 
-def is_managed(md_file):
+def parse_managed(md_file):
+    """Return (front_matter, body) if md_file is one this script manages, else None."""
     try:
         text = md_file.read_text(encoding="utf-8")
     except OSError:
-        return False
+        return None
     if not text.startswith("{"):
-        return False
+        return None
     try:
-        front, _ = json.JSONDecoder().raw_decode(text)
+        front, end = json.JSONDecoder().raw_decode(text)
     except json.JSONDecodeError:
-        return False
-    return isinstance(front, dict) and "youtube_id" in front
+        return None
+    if not isinstance(front, dict) or "youtube_id" not in front:
+        return None
+    return front, text[end:].lstrip("\n")
+
+
+def is_managed(md_file):
+    return parse_managed(md_file) is not None
 
 
 def main():
@@ -74,6 +86,12 @@ def main():
 
     CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     managed_before = {f for f in CONTENT_DIR.glob("*.md") if is_managed(f)}
+
+    transcripts = {}
+    for f in managed_before:
+        front, body = parse_managed(f)
+        if body.strip():
+            transcripts[front["youtube_id"]] = body
 
     used_slugs = {}
     written = set()
@@ -95,8 +113,13 @@ def main():
             "youtube_id": video_id,
             "description": description,
         }
+        content = json.dumps(front_matter, indent=2, ensure_ascii=False) + "\n"
+        transcript = transcripts.get(video_id, "").strip()
+        if transcript:
+            content += "\n" + transcript + "\n"
+
         path = CONTENT_DIR / f"{slug}.md"
-        path.write_text(json.dumps(front_matter, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        path.write_text(content, encoding="utf-8")
         written.add(path)
 
     removed = managed_before - written
@@ -104,6 +127,8 @@ def main():
         f.unlink()
 
     print(f"Synced {len(written)} video(s) from {channel_url}")
+    if transcripts:
+        print(f"Preserved {len(transcripts)} existing transcript(s)")
     if removed:
         print(f"Removed {len(removed)} video(s) no longer on the channel: " + ", ".join(f.name for f in removed))
 

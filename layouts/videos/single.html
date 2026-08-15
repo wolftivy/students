@@ -15,9 +15,18 @@
         </div>
 
         {{ with .Params.description }}
-        <div class="body-text">
+        <div class="description-text">
             <p>{{ . }}</p>
         </div>
+        {{ end }}
+
+        {{ if .Content }}
+        <section class="transcript">
+            <h2 class="transcript-label">Transcript</h2>
+            <div class="body-text">
+                {{ .Content }}
+            </div>
+        </section>
         {{ end }}
 
     </main>

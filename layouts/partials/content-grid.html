@@ -1,0 +1,29 @@
+{{ $items := . }}
+{{ if $items }}
+<div class="content-grid">
+    {{ range $items }}
+    {{ if eq .Type "videos" }}
+    <a href="{{ .RelPermalink }}" class="content-card video-card">
+        <div class="card-label">Video</div>
+        <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg" alt="" loading="lazy">
+            <div class="play-icon"></div>
+        </div>
+        <div class="card-title">{{ .Title }}</div>
+        <div class="card-meta">{{ .Date.Format "January 2006" }}</div>
+    </a>
+    {{ else }}
+    <a href="{{ .RelPermalink }}" class="content-card post-card">
+        <div class="card-label">Post</div>
+        <div class="post-card-box">
+            <div class="card-title">{{ .Title }}</div>
+            <div class="card-meta">{{ .Date.Format "January 2006" }}</div>
+            <div class="card-excerpt">{{ .Summary | plainify | truncate 200 }}</div>
+        </div>
+    </a>
+    {{ end }}
+    {{ end }}
+</div>
+{{ else }}
+<p class="empty-state">Nothing here yet.</p>
+{{ end }}
